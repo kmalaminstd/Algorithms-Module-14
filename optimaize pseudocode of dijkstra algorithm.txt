@@ -1,0 +1,50 @@
+       ---------DIJKSTRA ALORITHIM----------WITH----------PRIORITY QUEUE----------
+
+in put -> a weighted graph and a source node
+output->  distance of all node from the source node
+
+
+1) taking a distance array 'd' and initialize all values of 'd' to infinity
+{space complexity is O(n)}
+{time complexity is O(1)}
+
+1.5) d[source node]=0;
+
+*) TAKE AN EMPTY PRIOTY QUEUE >pq
+
+*) PUSH({0,SRC}) IN pq
+
+2) taking a visited array and mark all nodes as unvisited
+{space complexity is O(n)}
+{time complexity is O(1) if do it using loop then O(n) }
+
+3) while(pq is not empty) O(E)
+   -head_distance,head=pq.front
+    -pq.pop-------log E
+   -if visited[head]=1 ignor/continue
+   -visited[head]=1
+   - for all adjacency node of node  O(E) E means edges total edges can be n^2
+   - if d[head]+cost[node,adjacency node]<d[adjacency node]
+     - d[adjacency node]=d[head]+cost[node,adjacency node]
+     - pq.push(distance ,adjacency node)-------log E
+
+
+
+
+----------TOTAL TIME AND SPACE COMPLEXITY OF THIS CODE----------
+i) space complexity is o(m)
+
+ii) O(n)+O(ElogE) + O(ElogE)
+     -O(ElogE) + O(ElogE)
+     - |E|log|E|
+     -E can be v^2 in worst case
+     - |E|log|v^2|
+      - 2|E|log|v|
+      ElogV
+      or m log n
+
+
+
+
+
+
